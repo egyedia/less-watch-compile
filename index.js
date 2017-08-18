@@ -19,10 +19,9 @@ const config = require('yargs')
         type: 'boolean',
         describe: 'Disable safety check for importing dependencies of other LESS files'
     })
-    
-    .demand(['o'])
+    .demand(['w'])
     .argv
 if (!config.file)
-    watcher.start(config.safetyOff, config.watchDir.trim(), config.outputDir.trim())
+    watcher.start(config.safetyOff, config.watchDir.trim())
 else
-    watcher.start(config.safetyOff, config.file.trim(), config.outputDir.trim(), true)
+    watcher.start(config.safetyOff, config.file.trim(), true)

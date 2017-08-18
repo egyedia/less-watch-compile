@@ -1,5 +1,5 @@
 'use strict'
-module.exports.start = (safety, input, output, isFile) => {
+module.exports.start = (safety, input, isFile) => {
   const fs = require('fs')
   const path = require('path')
   const less = require('less')
