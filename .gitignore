@@ -41,3 +41,6 @@ public
 sass
 .sass-cache
 .vscode
+
+*.iml
+.idea

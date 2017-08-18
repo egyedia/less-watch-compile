@@ -7,11 +7,6 @@ const config = require('yargs')
         default: '/',
         describe: 'Specify what directory to watch'
     })
-    .option('o', {
-        alias: 'outputDir',
-        type: 'string',
-        describe: 'Specify what directory to output compiled LESS to'
-    })
     .option('f', {
         alias: 'file',
         type: 'string',

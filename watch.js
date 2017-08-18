@@ -8,7 +8,6 @@ module.exports.start = (safety, input, output, isFile) => {
   const home = process.cwd()
 
   const stylesDir = path.join(home, input)
-  const cssDir = path.join(home, output)
 
   console.log('Watching ' + input)
 
@@ -53,7 +52,7 @@ module.exports.start = (safety, input, output, isFile) => {
     less.render(content).then(
       output => {
         const cssFilename = path.basename(file, '.less') + '.css'
-        fs.writeFileSync(path.join(cssDir, cssFilename), output.css)
+        fs.writeFileSync(path.join(path.dirname(file), cssFilename), output.css)
         console.log(chalk.green('Succesfully compiled in ') + chalk.yellow((Date.now() - start) + 'ms'))
       },
       error => {
